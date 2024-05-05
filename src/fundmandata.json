@@ -1,0 +1,20 @@
+[
+  {
+    "fundId": 1,
+    "fundName": "Growth Fund",
+    "fundingManager": "ABC Capital Management",
+    "fundingType": "Equity"
+  },
+  {
+    "fundId": 2,
+    "fundName": "Income Fund",
+    "fundingManager": "XYZ Investments",
+    "fundingType": "Fixed Income"
+  },
+  {
+    "fundId": 3,
+    "fundName": "Balanced Fund",
+    "fundingManager": "DEF Asset Management",
+    "fundingType": "Mixed"
+  }
+]

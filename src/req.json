@@ -1,0 +1,33 @@
+[
+    {
+      "request": {
+        "managerName": "Alice Smith",
+        "email": "alice.smith@example.com",
+        "role": "Fund Manager",
+        "department": "Investments",
+        "requestDate": "2024-05-08",
+        "status": "Pending"
+      }
+    },
+    {
+      "request": {
+        "managerName": "Bob Johnson",
+        "email": "bob.johnson@example.com",
+        "role": "Fund Manager",
+        "department": "Asset Management",
+        "requestDate": "2024-05-09",
+        "status": "Approved"
+      }
+    },
+    {
+      "request": {
+        "managerName": "Eva Wong",
+        "email": "eva.wong@example.com",
+        "role": "Fund Manager",
+        "department": "Portfolio Management",
+        "requestDate": "2024-05-10",
+        "status": "Rejected"
+      }
+    }
+  ]
+  
