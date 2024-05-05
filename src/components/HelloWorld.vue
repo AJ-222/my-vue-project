@@ -1,59 +1,72 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="admin-panel">
+    <div class="tabs">
+      <div class="tab" v-for="(tab, index) in tabs" :key="index" @click="activeTab = index" :class="{ active: activeTab === index }">
+        {{ tab.title }}
+      </div>
+    </div>
+    <div class="tab-content">
+      <div v-if="activeTab === 0">
+        <h2>Manage Users</h2>
+        <!-- Your manage users content goes here -->
+      </div>
+      <div v-else-if="activeTab === 1">
+        <h2>Manage Existing Funds</h2>
+        <!-- Your manage existing funds content goes here -->
+      </div>
+      <div v-else>
+        <h2>Approve/Deny New Funds</h2>
+        <!-- Your approve/deny new funds content goes here -->
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  data() {
+    return {
+      activeTab: 0,
+      tabs: [
+        { title: "Manage Users" },
+        { title: "Manage Existing Funds" },
+        { title: "Approve/Deny New Funds" }
+      ]
+    };
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.admin-panel {
+  display: flex;
+  flex-direction: row;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.tabs {
+  display: flex;
+  flex-direction: column;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
 }
-a {
-  color: #42b983;
+
+.tab.active {
+  background-color: #fff;
+  font-weight: bold;
+}
+
+.tab-content {
+  margin-left: 20px;
+}
+
+.tab-content h2 {
+  margin-top: 0;
 }
 </style>
